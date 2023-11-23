@@ -17,3 +17,10 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comments
         fields = '__all__'
+
+class AddBlogSerializer(serializers.ModelSerializer):
+   user=UserDataSerializer()
+
+   class Meta:
+      model = BlogData
+      fields=["image","title","description","user","attachments"]
